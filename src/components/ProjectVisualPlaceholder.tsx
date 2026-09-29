@@ -10,16 +10,18 @@ export const ProjectVisualPlaceholder: React.FC<VisualProps> = ({ projectId, tit
   switch (projectId) {
     case 'voter-eligibility-checker':
       return (
-        <div className="w-full h-44 bg-gradient-to-br from-stone-100 to-stone-200 border-b border-stone-200 p-4 flex flex-col justify-between font-mono select-none">
-          <div className="flex items-center justify-between text-xs text-slate-500">
-            <span className="flex items-center gap-1.5 font-semibold text-slate-700">
-              <Vote className="w-4 h-4 text-blue-700" />
+        <div className="w-full h-44 bg-[#0a0e17] border-b border-slate-800 p-4 flex flex-col justify-between font-mono select-none">
+          <div className="flex items-center justify-between text-xs text-slate-400">
+            <span className="flex items-center gap-1.5 font-semibold text-slate-200">
+              <Vote className="w-4 h-4 text-blue-400" />
               voter_checker.py
             </span>
-            <span className="text-[11px] bg-white px-2 py-0.5 rounded border border-stone-200">CLI Logic</span>
+            <span className="text-[11px] bg-slate-900 text-blue-300 px-2 py-0.5 rounded border border-slate-800">
+              Python CLI
+            </span>
           </div>
-          <div className="bg-slate-900 text-slate-100 p-3 rounded text-[11px] space-y-1 shadow-inner">
-            <div className="text-slate-400"># Age eligibility verification</div>
+          <div className="bg-[#060910] text-slate-200 p-3 rounded-lg border border-slate-900 text-[11px] space-y-1 shadow-inner">
+            <div className="text-slate-500"># Evaluates prerequisites</div>
             <div>
               <span className="text-pink-400">if</span> age &gt;= <span className="text-amber-300">18</span> <span className="text-pink-400">and</span> registered:
             </div>
@@ -30,21 +32,23 @@ export const ProjectVisualPlaceholder: React.FC<VisualProps> = ({ projectId, tit
 
     case 'calculator':
       return (
-        <div className="w-full h-44 bg-gradient-to-br from-stone-100 to-stone-200 border-b border-stone-200 p-4 flex flex-col justify-between font-mono select-none">
-          <div className="flex items-center justify-between text-xs text-slate-500">
-            <span className="flex items-center gap-1.5 font-semibold text-slate-700">
-              <Calculator className="w-4 h-4 text-blue-700" />
-              calc_operations.py
+        <div className="w-full h-44 bg-[#0a0e17] border-b border-slate-800 p-4 flex flex-col justify-between font-mono select-none">
+          <div className="flex items-center justify-between text-xs text-slate-400">
+            <span className="flex items-center gap-1.5 font-semibold text-slate-200">
+              <Calculator className="w-4 h-4 text-blue-400" />
+              arithmetic_calc.py
             </span>
-            <span className="text-[11px] bg-white px-2 py-0.5 rounded border border-stone-200">Arithmetic</span>
+            <span className="text-[11px] bg-slate-900 text-blue-300 px-2 py-0.5 rounded border border-slate-800">
+              Modular Functions
+            </span>
           </div>
-          <div className="bg-slate-900 text-slate-100 p-3 rounded text-[11px] space-y-1 shadow-inner">
-            <div className="text-slate-400"># Safe division & arithmetic loop</div>
+          <div className="bg-[#060910] text-slate-200 p-3 rounded-lg border border-slate-900 text-[11px] space-y-1 shadow-inner">
+            <div className="text-slate-500"># Defensive error handling</div>
             <div>
-              <span className="text-pink-400">def</span> <span className="text-blue-300">divide</span>(a, b):
+              <span className="text-pink-400">def</span> <span className="text-blue-400">divide</span>(a, b):
             </div>
             <div className="pl-4 text-slate-300">
-              <span className="text-pink-400">return</span> a / b <span className="text-pink-400">if</span> b != <span className="text-amber-300">0</span> <span className="text-pink-400">else</span> <span className="text-amber-200">&quot;Error: ZeroDivision&quot;</span>
+              <span className="text-pink-400">return</span> a / b <span className="text-pink-400">if</span> b != <span className="text-amber-300">0</span> <span className="text-pink-400">else</span> <span className="text-amber-300">&quot;Err: ZeroDiv&quot;</span>
             </div>
           </div>
         </div>
@@ -52,18 +56,20 @@ export const ProjectVisualPlaceholder: React.FC<VisualProps> = ({ projectId, tit
 
     case 'atm-management-system':
       return (
-        <div className="w-full h-44 bg-gradient-to-br from-stone-100 to-stone-200 border-b border-stone-200 p-4 flex flex-col justify-between font-mono select-none">
-          <div className="flex items-center justify-between text-xs text-slate-500">
-            <span className="flex items-center gap-1.5 font-semibold text-slate-700">
-              <Landmark className="w-4 h-4 text-blue-700" />
+        <div className="w-full h-44 bg-[#0a0e17] border-b border-slate-800 p-4 flex flex-col justify-between font-mono select-none">
+          <div className="flex items-center justify-between text-xs text-slate-400">
+            <span className="flex items-center gap-1.5 font-semibold text-slate-200">
+              <Landmark className="w-4 h-4 text-blue-400" />
               atm_system.py
             </span>
-            <span className="text-[11px] bg-white px-2 py-0.5 rounded border border-stone-200">Transaction State</span>
+            <span className="text-[11px] bg-slate-900 text-blue-300 px-2 py-0.5 rounded border border-slate-800">
+              Transaction State
+            </span>
           </div>
-          <div className="bg-slate-900 text-slate-100 p-3 rounded text-[11px] space-y-1 shadow-inner">
-            <div className="text-slate-400"># Authenticated state machine</div>
+          <div className="bg-[#060910] text-slate-200 p-3 rounded-lg border border-slate-900 text-[11px] space-y-1 shadow-inner">
+            <div className="text-slate-500"># State machine transaction loop</div>
             <div className="flex justify-between text-slate-300">
-              <span>[1] Check Balance</span>
+              <span>[1] Balance</span>
               <span>[2] Deposit</span>
             </div>
             <div className="flex justify-between text-slate-300">
@@ -76,24 +82,26 @@ export const ProjectVisualPlaceholder: React.FC<VisualProps> = ({ projectId, tit
 
     case 'editing-projects':
       return (
-        <div className="w-full h-44 bg-gradient-to-br from-stone-100 to-stone-200 border-b border-stone-200 p-4 flex flex-col justify-between font-sans select-none">
-          <div className="flex items-center justify-between text-xs text-slate-500">
-            <span className="flex items-center gap-1.5 font-semibold text-slate-700">
-              <Film className="w-4 h-4 text-blue-700" />
+        <div className="w-full h-44 bg-[#0a0e17] border-b border-slate-800 p-4 flex flex-col justify-between font-sans select-none">
+          <div className="flex items-center justify-between text-xs text-slate-400">
+            <span className="flex items-center gap-1.5 font-semibold text-slate-200">
+              <Film className="w-4 h-4 text-blue-400" />
               media_timeline_v1
             </span>
-            <span className="text-[11px] bg-white px-2 py-0.5 rounded border border-stone-200 font-mono">Creative Media</span>
+            <span className="text-[11px] bg-slate-900 text-blue-300 px-2 py-0.5 rounded border border-slate-800 font-mono">
+              Creative Suite
+            </span>
           </div>
-          <div className="bg-slate-900 text-slate-100 p-3 rounded text-[11px] space-y-2 shadow-inner">
-            <div className="flex items-center justify-between text-xs text-slate-400">
+          <div className="bg-[#060910] text-slate-200 p-3 rounded-lg border border-slate-900 text-[11px] space-y-2 shadow-inner">
+            <div className="flex items-center justify-between text-xs text-slate-400 font-mono">
               <span>Video / Audio Multi-Track Pacing</span>
-              <span className="font-mono text-[10px]">24 FPS</span>
+              <span className="text-emerald-400">24 FPS</span>
             </div>
             <div className="grid grid-cols-6 gap-1 h-4">
               <div className="bg-blue-600 rounded-xs"></div>
               <div className="bg-blue-500 rounded-xs"></div>
               <div className="bg-indigo-500 rounded-xs"></div>
-              <div className="bg-slate-600 rounded-xs"></div>
+              <div className="bg-slate-700 rounded-xs"></div>
               <div className="bg-blue-400 rounded-xs"></div>
               <div className="bg-blue-700 rounded-xs"></div>
             </div>
@@ -103,16 +111,18 @@ export const ProjectVisualPlaceholder: React.FC<VisualProps> = ({ projectId, tit
 
     case 'gaming-projects':
       return (
-        <div className="w-full h-44 bg-gradient-to-br from-stone-100 to-stone-200 border-b border-stone-200 p-4 flex flex-col justify-between font-mono select-none">
-          <div className="flex items-center justify-between text-xs text-slate-500">
-            <span className="flex items-center gap-1.5 font-semibold text-slate-700">
-              <Gamepad2 className="w-4 h-4 text-blue-700" />
-              game_loop.py
+        <div className="w-full h-44 bg-[#0a0e17] border-b border-slate-800 p-4 flex flex-col justify-between font-mono select-none">
+          <div className="flex items-center justify-between text-xs text-slate-400">
+            <span className="flex items-center gap-1.5 font-semibold text-slate-200">
+              <Gamepad2 className="w-4 h-4 text-blue-400" />
+              interactive_loop.py
             </span>
-            <span className="text-[11px] bg-white px-2 py-0.5 rounded border border-stone-200">Interactive</span>
+            <span className="text-[11px] bg-slate-900 text-blue-300 px-2 py-0.5 rounded border border-slate-800">
+              Game Engine
+            </span>
           </div>
-          <div className="bg-slate-900 text-slate-100 p-3 rounded text-[11px] space-y-1 shadow-inner">
-            <div className="text-slate-400"># Collision & frame update cycle</div>
+          <div className="bg-[#060910] text-slate-200 p-3 rounded-lg border border-slate-900 text-[11px] space-y-1 shadow-inner">
+            <div className="text-slate-500"># Vector coordinate & collision cycle</div>
             <div className="text-slate-300">
               <span className="text-pink-400">while</span> running: check_keys() · update_pos()
             </div>
@@ -123,27 +133,29 @@ export const ProjectVisualPlaceholder: React.FC<VisualProps> = ({ projectId, tit
 
     case 'student-grade-calculator':
       return (
-        <div className="w-full h-44 bg-gradient-to-br from-stone-100 to-stone-200 border-b border-stone-200 p-4 flex flex-col justify-between font-mono select-none">
-          <div className="flex items-center justify-between text-xs text-slate-500">
-            <span className="flex items-center gap-1.5 font-semibold text-slate-700">
-              <GraduationCap className="w-4 h-4 text-blue-700" />
+        <div className="w-full h-44 bg-[#0a0e17] border-b border-slate-800 p-4 flex flex-col justify-between font-mono select-none">
+          <div className="flex items-center justify-between text-xs text-slate-400">
+            <span className="flex items-center gap-1.5 font-semibold text-slate-200">
+              <GraduationCap className="w-4 h-4 text-blue-400" />
               grade_evaluator.py
             </span>
-            <span className="text-[11px] bg-white px-2 py-0.5 rounded border border-stone-200">Evaluator</span>
+            <span className="text-[11px] bg-slate-900 text-blue-300 px-2 py-0.5 rounded border border-slate-800">
+              Grade Logic
+            </span>
           </div>
-          <div className="bg-slate-900 text-slate-100 p-3 rounded text-[11px] space-y-1 shadow-inner">
-            <div className="text-slate-400"># Grade boundary calculation</div>
+          <div className="bg-[#060910] text-slate-200 p-3 rounded-lg border border-slate-900 text-[11px] space-y-1 shadow-inner">
+            <div className="text-slate-500"># Multi-condition grade evaluator</div>
             <div className="text-slate-300">
               Marks: [88, 92, 79, 85] · Average: <span className="text-amber-300">86.0%</span>
             </div>
-            <div className="text-emerald-400 text-[10px]">&gt; Result: Grade &apos;A&apos; (Distinction Standing)</div>
+            <div className="text-emerald-400 text-[10px]">&gt; Status: Grade &apos;A&apos; (Distinction Standing)</div>
           </div>
         </div>
       );
 
     default:
       return (
-        <div className="w-full h-44 bg-stone-100 border-b border-stone-200 p-4 flex items-center justify-center text-slate-400 text-xs">
+        <div className="w-full h-44 bg-slate-900 border-b border-slate-800 p-4 flex items-center justify-center text-slate-400 text-xs font-mono">
           {title} Project Preview
         </div>
       );

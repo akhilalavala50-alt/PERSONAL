@@ -11,6 +11,22 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: #fafaf9;
-  color: #0f172a;
+  background-color: #0b0f17;
+  color: #f1f5f9;
 }
+
+/* Subtle custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0f17;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+

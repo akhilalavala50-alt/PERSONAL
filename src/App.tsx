@@ -16,7 +16,7 @@ export default function App() {
   const [isGithubModalOpen, setIsGithubModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-stone-50 text-slate-900 flex flex-col font-sans selection:bg-stone-200 selection:text-slate-900">
+    <div className="min-h-screen bg-[#0b0f17] text-slate-100 flex flex-col font-sans selection:bg-blue-900 selection:text-white">
       {/* 3-Zone Top Navigation */}
       <Navbar onOpenSourceModal={() => setIsSourceModalOpen(true)} />
 

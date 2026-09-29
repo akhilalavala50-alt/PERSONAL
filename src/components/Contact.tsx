@@ -1,6 +1,6 @@
 import { useState, FormEvent } from 'react';
 import { STUDENT_PROFILE } from '../data/portfolioData';
-import { Mail, Send, CheckCircle2, ArrowUpRight, Copy, Check } from 'lucide-react';
+import { Send, CheckCircle2, ArrowUpRight, Copy, Check, Terminal } from 'lucide-react';
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -36,19 +36,20 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 border-b border-stone-200/70">
+    <section id="contact" className="py-24 border-b border-slate-800/80">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-12">
-          <div className="text-xs font-bold tracking-wider text-blue-700 uppercase mb-2">
-            06. Connect & Collaborate
+        <div className="max-w-3xl mb-14">
+          <div className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-widest text-blue-400 uppercase mb-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+            <span>06. Direct Dispatch</span>
           </div>
-          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl text-balance">
+          <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white text-balance">
             Get in Touch
           </h2>
-          <p className="mt-3 text-base text-slate-600">
-            Open to conversations with fellow students, developers, mentors, and hackathon teams. Reach out with project ideas or feedback.
+          <p className="mt-3 text-base sm:text-lg text-slate-400">
+            Open to collaborative discussions with fellow students, engineers, mentors, and hackathon teams.
           </p>
         </div>
 
@@ -56,11 +57,11 @@ export function Contact() {
           
           {/* Left Column: Direct Links & Profile (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-white border border-stone-200 rounded-xl p-6 shadow-xs">
-              <h3 className="text-base font-bold text-slate-900 mb-3">
+            <div className="bg-[#0f172a] border border-slate-800 rounded-xl p-7 shadow-2xl">
+              <h3 className="text-lg font-bold text-white mb-3">
                 Preferred Connection Channel
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
                 For project discussions, hackathon invitations, and professional networking, connecting directly through LinkedIn is the fastest way to get in touch.
               </p>
 
@@ -69,25 +70,26 @@ export function Contact() {
                 href={STUDENT_PROFILE.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold text-white bg-slate-900 rounded-md hover:bg-slate-800 transition-colors shadow-xs"
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 text-sm font-bold text-white bg-blue-600 rounded-md hover:bg-blue-500 transition-all shadow-lg shadow-blue-900/30"
               >
                 <span>Connect on LinkedIn</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
 
-              <div className="mt-4 pt-4 border-t border-stone-100 text-xs text-slate-500">
-                <span>Profile URL: </span>
-                <span className="font-mono text-slate-700 break-all select-all">
+              <div className="mt-6 pt-5 border-t border-slate-800/80 text-xs text-slate-400">
+                <span className="block text-slate-500 font-mono mb-1 text-[11px]">Direct Profile URL:</span>
+                <span className="font-mono text-slate-300 break-all select-all">
                   linkedin.com/in/alavala-ram-akhil-21bb00423
                 </span>
               </div>
             </div>
 
             {/* Note on Student Availability */}
-            <div className="bg-stone-50 border border-stone-200 rounded-xl p-6 text-xs text-slate-600 space-y-2">
-              <h4 className="font-bold text-slate-800 text-sm">
-                Student Availability
-              </h4>
+            <div className="bg-[#090d16] border border-slate-800 rounded-xl p-6 text-xs text-slate-400 space-y-2.5">
+              <div className="flex items-center gap-2 text-white font-bold text-sm">
+                <Terminal className="w-4 h-4 text-blue-400" />
+                <span>Student Availability</span>
+              </div>
               <p className="leading-relaxed">
                 Currently balancing first-semester university coursework with coding projects and hackathons. Response time is typically within 24–48 hours.
               </p>
@@ -96,16 +98,16 @@ export function Contact() {
 
           {/* Right Column: Contact Form (7 cols) */}
           <div className="lg:col-span-7">
-            <div className="bg-white border border-stone-200 rounded-xl p-6 sm:p-8 shadow-xs">
-              <h3 className="text-lg font-bold text-slate-900 mb-2">
+            <div className="bg-[#0f172a] border border-slate-800 rounded-xl p-6 sm:p-8 shadow-2xl">
+              <h3 className="text-xl font-bold text-white mb-2">
                 Send a Message
               </h3>
-              <p className="text-xs sm:text-sm text-slate-500 mb-6">
+              <p className="text-xs sm:text-sm text-slate-400 mb-6">
                 Fill in the details below to prepare a message draft.
               </p>
 
               {errorMessage && (
-                <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-md text-xs text-red-700">
+                <div className="mb-4 p-3.5 bg-red-950/50 border border-red-800 rounded-md text-xs text-red-300 font-mono">
                   {errorMessage}
                 </div>
               )}
@@ -113,8 +115,8 @@ export function Contact() {
               {!submitted ? (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label htmlFor="name" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                      Name <span className="text-red-500">*</span>
+                    <label htmlFor="name" className="block text-xs font-mono font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                      Name <span className="text-blue-400">*</span>
                     </label>
                     <input
                       type="text"
@@ -123,13 +125,13 @@ export function Contact() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Your name or organization"
-                      className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-md text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all"
+                      className="w-full px-4 py-3 bg-[#090d16] border border-slate-800 rounded-md text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                      Email <span className="text-red-500">*</span>
+                    <label htmlFor="email" className="block text-xs font-mono font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                      Email <span className="text-blue-400">*</span>
                     </label>
                     <input
                       type="email"
@@ -138,13 +140,13 @@ export function Contact() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="your.email@example.com"
-                      className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-md text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all"
+                      className="w-full px-4 py-3 bg-[#090d16] border border-slate-800 rounded-md text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                      Message <span className="text-red-500">*</span>
+                    <label htmlFor="message" className="block text-xs font-mono font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                      Message <span className="text-blue-400">*</span>
                     </label>
                     <textarea
                       id="message"
@@ -152,42 +154,42 @@ export function Contact() {
                       required
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Tell me about your project, hackathon idea, or advice for an aspiring AI engineer..."
-                      className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-md text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all resize-y"
+                      placeholder="Share project ideas, hackathon collaboration, or advice for an aspiring AI engineer..."
+                      className="w-full px-4 py-3 bg-[#090d16] border border-slate-800 rounded-md text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-y"
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-slate-900 rounded-md hover:bg-slate-800 transition-colors shadow-xs w-full sm:w-auto"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold text-white bg-blue-600 rounded-md hover:bg-blue-500 transition-all shadow-md shadow-blue-950/40 w-full sm:w-auto"
                   >
                     <span>Send Message</span>
                     <Send className="w-4 h-4" />
                   </button>
                 </form>
               ) : (
-                <div className="bg-stone-50 border border-stone-200 rounded-lg p-6 space-y-4 animate-in fade-in">
-                  <div className="flex items-center gap-2 text-emerald-700 font-bold text-sm">
+                <div className="bg-[#090d16] border border-slate-800 rounded-lg p-6 space-y-4 animate-in fade-in">
+                  <div className="flex items-center gap-2 text-emerald-400 font-bold text-sm font-mono">
                     <CheckCircle2 className="w-5 h-5" />
                     <span>Message Draft Prepared Successfully!</span>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    Thank you for reaching out, <strong className="text-slate-900">{formData.name}</strong>. Because a live mail server or backend endpoint is not wired in this static portfolio preview, your drafted message is preserved below:
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    Thank you for reaching out, <strong className="text-white">{formData.name}</strong>. Because a mail server or backend endpoint is not wired in this static portfolio preview, your drafted message is preserved below:
                   </p>
 
-                  <div className="bg-white border border-stone-200 rounded-md p-3 font-mono text-xs text-slate-700 space-y-1">
-                    <div><span className="text-slate-400">From:</span> {formData.name} ({formData.email})</div>
-                    <div className="pt-1 text-slate-900 whitespace-pre-wrap">{formData.message}</div>
+                  <div className="bg-slate-950 border border-slate-800 rounded-md p-3.5 font-mono text-xs text-slate-300 space-y-1">
+                    <div><span className="text-slate-500">From:</span> {formData.name} ({formData.email})</div>
+                    <div className="pt-2 text-white whitespace-pre-wrap">{formData.message}</div>
                   </div>
 
                   <div className="flex flex-wrap items-center gap-3 pt-2">
                     <button
                       type="button"
                       onClick={handleCopyDraft}
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium text-slate-800 bg-white border border-stone-300 rounded-md hover:bg-stone-100 transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-slate-200 bg-slate-900 border border-slate-800 rounded-md hover:bg-slate-800 transition-colors"
                     >
-                      {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5 text-slate-500" />}
+                      {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5 text-slate-400" />}
                       <span>{copied ? 'Copied to Clipboard' : 'Copy Message Text'}</span>
                     </button>
 
@@ -195,7 +197,7 @@ export function Contact() {
                       href={STUDENT_PROFILE.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-white bg-slate-900 rounded-md hover:bg-slate-800 transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-white bg-blue-600 rounded-md hover:bg-blue-500 transition-colors"
                     >
                       <span>Send via LinkedIn</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
@@ -204,7 +206,7 @@ export function Contact() {
                     <button
                       type="button"
                       onClick={handleReset}
-                      className="text-xs text-slate-500 hover:text-slate-800 underline ml-auto"
+                      className="text-xs text-slate-400 hover:text-white underline ml-auto"
                     >
                       Write Another Message
                     </button>
@@ -213,9 +215,9 @@ export function Contact() {
               )}
 
               {/* Developer Integration Note */}
-              <div className="mt-6 pt-4 border-t border-stone-100 text-[11px] text-slate-400">
-                <span className="font-semibold text-slate-500">Backend Ready: </span>
-                This form is structured with clean state handlers. To connect a backend, attach an API endpoint (e.g. Express `/api/contact`, Formspree, or EmailJS) inside `handleSubmit`.
+              <div className="mt-6 pt-4 border-t border-slate-800/80 text-[11px] text-slate-500 font-mono">
+                <span className="text-slate-400 font-bold">Backend Ready: </span>
+                This form is structured with clean state handlers. To connect a live backend, wire an API endpoint (e.g. Express `/api/contact`, Formspree, or EmailJS) inside `handleSubmit`.
               </div>
             </div>
           </div>

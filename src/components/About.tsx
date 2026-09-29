@@ -1,5 +1,5 @@
 import { STUDENT_PROFILE } from '../data/portfolioData';
-import { Code2, Target, Cpu, CheckCircle2 } from 'lucide-react';
+import { Code2, Target, Cpu, CheckCircle2, ShieldCheck, Flame } from 'lucide-react';
 
 export function About() {
   const pillars = [
@@ -7,57 +7,60 @@ export function About() {
       icon: Code2,
       title: 'Project-First Learning',
       description:
-        'Believing that concepts solidify through actual implementation. Writing scripts, diagnosing bugs, and testing real-world logic rather than just reading theory.',
+        'Believing that true conceptual mastery is forged at the keyboard. Writing scripts, diagnosing bugs, and testing real-world logic rather than just memorizing passive syntax.',
     },
     {
       icon: Cpu,
-      title: 'Early AI & GenAI Exploration',
+      title: 'Applied AI & GenAI Curiosity',
       description:
-        'Experimenting with foundational AI concepts, prompt engineering, and modern AI developer workflows with an eagerness to understand how intelligence is engineered.',
+        'Experimenting with foundational AI concepts, prompt engineering, and generative developer workflows with an eagerness to understand how real intelligence is engineered.',
     },
     {
       icon: Target,
-      title: 'Problem-Solving Mindset',
+      title: 'Competitive Problem-Solving',
       description:
-        'Actively participating in ideathons and hackathon sprints to deconstruct community or campus challenges into approachable computational workflows.',
+        'Actively participating in ideathons and hackathon sprints to deconstruct community or campus challenges into approachable computational workflows under strict time limits.',
     },
   ];
 
   return (
-    <section id="about" className="py-20 border-b border-stone-200/70 bg-stone-50/50">
+    <section id="about" className="py-24 border-b border-slate-800/80 bg-[#0e1422]/60 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-12">
-          <div className="text-xs font-bold tracking-wider text-blue-700 uppercase mb-2">
-            01. Background & Profile
+        <div className="max-w-3xl mb-14">
+          <div className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-widest text-blue-400 uppercase mb-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+            <span>01. Background & Mission</span>
           </div>
-          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl text-balance">
+          <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white text-balance">
             About Me
           </h2>
-          <p className="mt-3 text-base text-slate-600">
-            A transparent look at where I am today, what drives my curiosity, and how I approach my development journey.
+          <p className="mt-3 text-base sm:text-lg text-slate-400">
+            A transparent look at where I stand today, what fuels my ambition, and how I approach my daily engineering journey.
           </p>
         </div>
 
-        {/* Core Statement Box */}
-        <div className="bg-white border border-stone-200 rounded-xl p-6 sm:p-8 shadow-xs mb-12">
-          <blockquote className="text-base sm:text-lg text-slate-800 leading-relaxed font-normal">
+        {/* Heroic Statement Box */}
+        <div className="bg-[#0f172a] border border-slate-800 rounded-xl p-6 sm:p-10 shadow-2xl relative overflow-hidden mb-12">
+          <div className="absolute top-0 left-0 w-1.5 h-full bg-blue-600"></div>
+
+          <blockquote className="text-lg sm:text-2xl text-slate-100 leading-relaxed font-medium">
             &ldquo;{STUDENT_PROFILE.aboutMeText}&rdquo;
           </blockquote>
 
-          <div className="mt-6 pt-6 border-t border-stone-100 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500">
+          <div className="mt-8 pt-6 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-400">
             <div className="flex items-center gap-2">
-              <span className="font-semibold text-slate-800">Status:</span>
-              <span>First-Semester Undergraduate</span>
+              <span className="font-semibold text-slate-200">Current Status:</span>
+              <span className="text-blue-400 font-mono">1st Semester Undergraduate</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="font-semibold text-slate-800">Primary Objective:</span>
-              <span>Long-Term AI Engineering Career</span>
+              <span className="font-semibold text-slate-200">Core Career Goal:</span>
+              <span className="text-emerald-400 font-mono">Aspiring AI Engineer</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="font-semibold text-slate-800">Mindset:</span>
-              <span>Curious · Hands-on · Receptive to Mentorship</span>
+              <span className="font-semibold text-slate-200">Approach:</span>
+              <span className="text-slate-300">Hands-on · Project Driven · Continuous Growth</span>
             </div>
           </div>
         </div>
@@ -69,15 +72,15 @@ export function About() {
             return (
               <div
                 key={pillar.title}
-                className="bg-white border border-stone-200 rounded-lg p-6 shadow-xs hover:border-stone-300 transition-colors"
+                className="bg-[#0f172a]/70 border border-slate-800 rounded-xl p-7 shadow-lg hover:border-slate-700 transition-all group"
               >
-                <div className="w-9 h-9 rounded-md bg-stone-100 flex items-center justify-center text-slate-900 mb-4">
-                  <Icon className="w-5 h-5 text-blue-700" />
+                <div className="w-12 h-12 rounded-lg bg-blue-950/60 border border-blue-900/40 flex items-center justify-center text-blue-400 mb-5 group-hover:scale-105 transition-transform">
+                  <Icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 mb-2">
+                <h3 className="text-lg font-bold text-white mb-2.5">
                   {pillar.title}
                 </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
+                <p className="text-sm text-slate-400 leading-relaxed">
                   {pillar.description}
                 </p>
               </div>
@@ -85,11 +88,11 @@ export function About() {
           })}
         </div>
 
-        {/* Commitment to Transparency */}
-        <div className="mt-8 bg-stone-100/70 border border-stone-200/80 rounded-lg p-4 sm:p-5 flex items-start gap-3">
-          <CheckCircle2 className="w-5 h-5 text-slate-700 shrink-0 mt-0.5" />
-          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            <strong className="text-slate-900 font-semibold">Honest Representation:</strong> I believe in genuine growth over inflated titles. I do not claim years of industry engineering experience; instead, I bring consistent daily practice, curiosity for emerging AI developments, and a strong drive to learn from mentors and collaborative projects.
+        {/* Commitment to Transparency & Heroic Integrity */}
+        <div className="mt-10 bg-slate-900/60 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex items-start gap-4">
+          <ShieldCheck className="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <strong className="text-white font-semibold">Grounded Engineering Integrity:</strong> I believe real capability is demonstrated through working code and clear logic. I do not claim years of enterprise engineering experience; instead, I bring deep motivation, daily hands-on implementation, curiosity for modern Generative AI, and a high-discipline work ethic.
           </p>
         </div>
 
